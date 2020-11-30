@@ -24,7 +24,7 @@ const initialState = {
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
-    const store = configureStore()
+    const store = configureStore(initialState)
     window.store = store
     window.receiveTodo = receiveTodo;
     window.receiveTodos = receiveTodos;

@@ -1,23 +1,10 @@
 import { RECEIVE_TODOS } from '../actions/todo_actions';
 import { RECEIVE_TODO } from '../actions/todo_actions';
 
-const initialState = {
-  1: {
-    id: 1,
-    title: "wash car",
-    body: "with soap",
-    done: false
-  },
-  2: {
-    id: 2,
-    title: "wash dog",
-    body: "with shampoo",
-    done: true
-  }
-};
 
 
-const todosReducer = (currentState = initialState, action) => {
+
+const todosReducer = (currentState = {}, action) => {
     Object.freeze(currentState);
     let nextState = {...currentState};
 
@@ -33,7 +20,7 @@ const todosReducer = (currentState = initialState, action) => {
              nextState[action.todo.id] = action.todo;
              return nextState;
         default:
-            return nextState;
+            return currentState;
 
     }
 
